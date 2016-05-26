@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+    <link rel="stylesheet" href="http://wei2009.github.io/css/styles.css">
+    <link rel="stylesheet" href="http://wei2009.github.io/css/custom.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://wei2009.github.io//index.xml">
 
     
-    <title>Android启动流程(4.4.4) - </title>
-    <meta property='og:title' content="Android启动流程(4.4.4) - ">
+    <title>Android启动流程(4.4.4) - Wesley的Blog</title>
+    <meta property='og:title' content="Android启动流程(4.4.4) - Wesley的Blog">
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="/post/2016/2016-05-27/">
+    <meta property="og:url" content="http://wei2009.github.io/post/2016/2016-05-27/">
     
     
 
@@ -37,7 +37,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href=""></a>
+            <a class="navbar-brand" href="http://wei2009.github.io/">Wesley的Blog</a>
           </div>
 
           <div id="navbar" class="collapse navbar-collapse">
@@ -60,26 +60,26 @@
 
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
-        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content=""/>
+        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://wei2009.github.io/"/>
         <meta itemprop="dateModified" content="2016-05-27T02:13:01&#43;08:00">
         <meta itemprop="headline" content="Android启动流程(4.4.4)">
         <meta itemprop="description" content="Android启动流程(4.4.4) init 当Android手机开机以后，通常首先启动的是芯片内的bootloader，然后加载外部的bootloader，如Uboot之类。然后通过这些bootloader加载linux kernel。当linux kernel加载以后，然后调用第一个程序就是init。这个是Android的第一个进程。 在android手机上运行ps，1号进程就是init。 root@pisces:/ # ps ps USER PID PPID VSIZE RSS WCHAN PC NAME root 1 0 716 400 c014de6c 0001a9e8 S /init root 2 0 0 0 c0085340 00000000 S kthreadd root 3 2 0 0 c006bd90 00000000 S ksoftirqd/0 root 5 2 0 0 c00804ec 00000000 S kworker/0:0H 下面来看一下init做了哪些事情 http://androidxref.com/4.4.4_r1/xref/system/core/init/init.c 982 /* Get the basic filesystem setup we need put 983 * together in the initramdisk on / and then we&#39;ll 984 * let the rc file figure out the rest.">
-        <meta itemprop="url" content="/post/2016/2016-05-27/">
+        <meta itemprop="url" content="http://wei2009.github.io/post/2016/2016-05-27/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="images/default.jpg" />
+          <meta itemprop="url" content="http://wei2009.github.io/images/default.jpg" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
         <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
           <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-            <meta itemprop="url" content="images/logo.jpg">
+            <meta itemprop="url" content="http://wei2009.github.io/images/logo.jpg">
             <meta itemprop="width" content="100">
             <meta itemprop="height" content="100">
           </div>
-          <meta itemprop="name" content="">
+          <meta itemprop="name" content="Wesley的Blog">
         </div>
         <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-          <meta itemprop="name" content="">
+          <meta itemprop="name" content="wesleywli">
         </div>
 
         <header class="article-header">
@@ -1003,10 +1003,10 @@ root      5     2     0      0     c00804ec 00000000 S kworker/0:0H
           
 
           <div class="section share">
-            <a href="http://www.facebook.com/sharer.php?src=bm&u=%2fpost%2f2016%2f2016-05-27%2f&t=Android%e5%90%af%e5%8a%a8%e6%b5%81%e7%a8%8b%284.4.4%29" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
-            <a href="http://twitter.com/intent/tweet?url=%2fpost%2f2016%2f2016-05-27%2f&text=Android%e5%90%af%e5%8a%a8%e6%b5%81%e7%a8%8b%284.4.4%29&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
-            <a href="https://plus.google.com/share?url=%2fpost%2f2016%2f2016-05-27%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
-            <a href="http://getpocket.com/edit?url=%2fpost%2f2016%2f2016-05-27%2f&title=Android%e5%90%af%e5%8a%a8%e6%b5%81%e7%a8%8b%284.4.4%29" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+            <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fwei2009.github.io%2fpost%2f2016%2f2016-05-27%2f&t=Android%e5%90%af%e5%8a%a8%e6%b5%81%e7%a8%8b%284.4.4%29" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+            <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fwei2009.github.io%2fpost%2f2016%2f2016-05-27%2f&text=Android%e5%90%af%e5%8a%a8%e6%b5%81%e7%a8%8b%284.4.4%29&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+            <a href="https://plus.google.com/share?url=http%3a%2f%2fwei2009.github.io%2fpost%2f2016%2f2016-05-27%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+            <a href="http://getpocket.com/edit?url=http%3a%2f%2fwei2009.github.io%2fpost%2f2016%2f2016-05-27%2f&title=Android%e5%90%af%e5%8a%a8%e6%b5%81%e7%a8%8b%284.4.4%29" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
           </div>
 
           
@@ -1027,7 +1027,7 @@ root      5     2     0      0     c00804ec 00000000 S kworker/0:0H
     </div>
     <div class="list-group">
       
-      <a href="/post/2016/2016-05-27/" class="list-group-item">Android启动流程(4.4.4)</a>
+      <a href="http://wei2009.github.io/post/2016/2016-05-27/" class="list-group-item">Android启动流程(4.4.4)</a>
       
     </div>
   </div>
@@ -1065,7 +1065,7 @@ root      5     2     0      0     c00804ec 00000000 S kworker/0:0H
 
     <footer class="site">
       <div class="container">
-        <p>&copy; 2016 </p>
+        <p>&copy; 2016 wesleywli</p>
         <p>Powered by <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_beg" target="_blank" rel="nofollow">beg</a> designed by <a href="http://yet.unresolved.xyz" target="_blank" rel="nofollow">Daisuke Tsuji</a></p>
       </div>
     </footer>

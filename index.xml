@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
-    <link>/</link>
-    <description>Recent content on </description>
+    <title>Wesley的Blog</title>
+    <link>http://wei2009.github.io/</link>
+    <description>Recent content on Wesley的Blog</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
     <lastBuildDate>Fri, 27 May 2016 02:13:01 +0800</lastBuildDate>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://wei2009.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Android启动流程(4.4.4)</title>
-      <link>/post/2016/2016-05-27/</link>
+      <link>http://wei2009.github.io/post/2016/2016-05-27/</link>
       <pubDate>Fri, 27 May 2016 02:13:01 +0800</pubDate>
       
-      <guid>/post/2016/2016-05-27/</guid>
+      <guid>http://wei2009.github.io/post/2016/2016-05-27/</guid>
       <description>
 
 &lt;h4 id=&#34;android启动流程-4-4-4:fdd6ada81b0db5bbcc8e39e3a34b071f&#34;&gt;Android启动流程(4.4.4)&lt;/h4&gt;
