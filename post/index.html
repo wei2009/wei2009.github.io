@@ -14,12 +14,12 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://replace-this-with-your-hugo-site.com//index.xml">
 
     
-    <title>Categories - My New Hugo Site</title>
-    <meta property='og:title' content="Categories - My New Hugo Site">
+    <title>Posts - My New Hugo Site</title>
+    <meta property='og:title' content="Posts - My New Hugo Site">
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://replace-this-with-your-hugo-site.com/categories/">
+    <meta property="og:url" content="http://replace-this-with-your-hugo-site.com/post/">
     
     
 
@@ -52,14 +52,31 @@
       <div class="container">
 
 
-<div class="list terms">
+<div class="list">
 
   <div class="row">
     <div class="col-md-8">
-
-      <header class="page-title">Categories</header>
+      <header class="page-title">Posts</header>
 
       
+      <article class="li">
+  <header>
+    <div class="date">Fri, May 27, 2016</div>
+    <div class="title"><a href="http://replace-this-with-your-hugo-site.com/post/2016/2016-05-27/">Android启动流程(4.4.4)</a></div>
+  </header>
+  <div class="body">Android启动流程(4.4.4) init 当Android手机开机以后，通常首先启动的是芯片内的bootloader，然后加载外部的bootloader，如Uboot之类。然后通过这些bootloader加载linux kernel。当linux kernel加载以后，然后调用第一个程序就是init。这个是Android的第一个进程。 在android手机上运行ps，1号进程就是init。 root@pisces:/ # ps ps USER PID PPID VSIZE RSS WCHAN PC NAME root 1 0 716 400 c014de6c 0001a9e8 S /init root 2 0 0 0 c0085340 00000000 S kthreadd root 3 2 0 0 c006bd90 00000000 S ksoftirqd/0 root 5 2 0 0 c00804ec 00000000 S kworker/0:0H 下面来看一下init做了哪些事情 http://androidxref.com/4.4.4_r1/xref/system/core/init/init.c 982 /* Get the basic filesystem setup we need put 983 * together in the initramdisk on / and then we'll 984 * let the rc file figure out the rest.</div>
+
+  
+  <footer>
+    <a href="http://replace-this-with-your-hugo-site.com/post/2016/2016-05-27/" class="btn btn-default">Read More…</a>
+  </footer>
+  
+</article>
+<hr>
+
+      
+      
+
 
     </div>
     <div class="col-md-4">

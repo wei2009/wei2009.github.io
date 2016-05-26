@@ -57,6 +57,22 @@
   <div class="row">
     <div class="col-md-8">
       
+      <article class="li">
+  <header>
+    <div class="date">Fri, May 27, 2016</div>
+    <div class="title"><a href="http://replace-this-with-your-hugo-site.com/post/2016/2016-05-27/">Android启动流程(4.4.4)</a></div>
+  </header>
+  <div class="body">Android启动流程(4.4.4) init 当Android手机开机以后，通常首先启动的是芯片内的bootloader，然后加载外部的bootloader，如Uboot之类。然后通过这些bootloader加载linux kernel。当linux kernel加载以后，然后调用第一个程序就是init。这个是Android的第一个进程。 在android手机上运行ps，1号进程就是init。 root@pisces:/ # ps ps USER PID PPID VSIZE RSS WCHAN PC NAME root 1 0 716 400 c014de6c 0001a9e8 S /init root 2 0 0 0 c0085340 00000000 S kthreadd root 3 2 0 0 c006bd90 00000000 S ksoftirqd/0 root 5 2 0 0 c00804ec 00000000 S kworker/0:0H 下面来看一下init做了哪些事情 http://androidxref.com/4.4.4_r1/xref/system/core/init/init.c 982 /* Get the basic filesystem setup we need put 983 * together in the initramdisk on / and then we'll 984 * let the rc file figure out the rest.</div>
+
+  
+  <footer>
+    <a href="http://replace-this-with-your-hugo-site.com/post/2016/2016-05-27/" class="btn btn-default">Read More…</a>
+  </footer>
+  
+</article>
+<hr>
+
+      
       
 
 
@@ -71,9 +87,29 @@
     </div>
     <div class="list-group">
       
+      <a href="http://replace-this-with-your-hugo-site.com/post/2016/2016-05-27/" class="list-group-item">Android启动流程(4.4.4)</a>
+      
     </div>
   </div>
 
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2 class="panel-title">category</h2>
+    </div>
+    <div class="list-group">
+      
+    </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2 class="panel-title">tag</h2>
+    </div>
+    <div class="list-group">
+      
+    </div>
+  </div>
   
 
 </aside>
@@ -88,7 +124,7 @@
 
     <footer class="site">
       <div class="container">
-        <p>&copy; 1 My New Hugo Site</p>
+        <p>&copy; 2016 My New Hugo Site</p>
         <p>Powered by <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_beg" target="_blank" rel="nofollow">beg</a> designed by <a href="http://yet.unresolved.xyz" target="_blank" rel="nofollow">Daisuke Tsuji</a></p>
       </div>
     </footer>
