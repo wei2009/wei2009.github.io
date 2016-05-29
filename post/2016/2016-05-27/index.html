@@ -56,7 +56,7 @@
 <div class="single">
 
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-9">
 
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
@@ -956,7 +956,10 @@ http://androidxref.com/4.4.4_r1/xref/frameworks/base/cmds/app_process/app_main.c
 
 <li><p>nativeInit最终执行到 startSensorService.</p>
 
-<pre><code class="language-java">92    public void initAndLoop() {
+<pre><code class="language-java">http://androidxref.com/4.4.4_r1/xref/frameworks/base/services/java/com/android/server/SystemServer.java
+
+
+92    public void initAndLoop() {
 93        EventLog.writeEvent(EventLogTags.BOOT_PROGRESS_SYSTEM_RUN,
 94            SystemClock.uptimeMillis());
 95
@@ -984,6 +987,14 @@ http://androidxref.com/4.4.4_r1/xref/frameworks/base/cmds/app_process/app_main.c
 248
 249            ActivityManagerService.setSystemProcess();
 .....
+
+
+316
+317         ActivityManagerService.self().setWindowManager(wm);
+318
+
+
+......
 
 
 938        ActivityManagerService.self().systemReady(new Runnable() {
@@ -1017,11 +1028,60 @@ http://androidxref.com/4.4.4_r1/xref/frameworks/base/cmds/app_process/app_main.c
 
 <li><p>thr.initAndLoop();里面会启动各种java service。注意这里的ServerThread不是一个Thread，只是一个类名，执行的还是在主线程，执行到最后会执行 Line 1093 进入Looper。</p></li>
 
-<li><p>基本上我们知道的重要的service基本上都是在thr.initAndLoop里面启动的，包括AMS, PMS等。</p></li>
+<li><p>基本上我们知道的重要的service基本上都是在thr.initAndLoop里面启动的，包括AMS, PMS等。</p>
 
-<li><p>在AMS的SystemReady最后会执行。             mStackSupervisor.resumeTopActivitiesLocked(); 当前没有TopActivity，会启动launcher。</p></li>
+<pre><code class="language-java">http://androidxref.com/4.4.4_r1/xref/frameworks/base/services/java/com/android/server/am/ActivityManagerService.java
 
-<li></li>
+
+9193    public void systemReady(final Runnable goingCallback) {
+9194        synchronized(this) {
+9195            if (mSystemReady) {
+9196                if (goingCallback != null) goingCallback.run();
+9197                return;
+9198            }
+9199
+9200            // Check to see if there are any update receivers to run.
+9201            if (!mDidUpdate) {
+9202                if (mWaitingUpdate) {
+9203                    return;
+9204                }
+9205                Intent intent = new Intent(Intent.ACTION_PRE_BOOT_COMPLETED);
+9206                List&lt;ResolveInfo&gt; ris = null;
+9207                try {
+9208                    ris = AppGlobals.getPackageManager().queryIntentReceivers(
+9209                            intent, null, 0, 0);
+9210                } catch (RemoteException e) {
+
+
+............
+
+
+9413                intent = new Intent(Intent.ACTION_USER_STARTING);
+9414                intent.addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY);
+9415                intent.putExtra(Intent.EXTRA_USER_HANDLE, mCurrentUserId);
+9416                broadcastIntentLocked(null, null, intent,
+9417                        null, new IIntentReceiver.Stub() {
+9418                            @Override
+9419                            public void performReceive(Intent intent, int resultCode, String data,
+9420                                    Bundle extras, boolean ordered, boolean sticky, int sendingUser)
+9421                                    throws RemoteException {
+9422                            }
+9423                        }, 0, null, null,
+9424                        android.Manifest.permission.INTERACT_ACROSS_USERS, AppOpsManager.OP_NONE,
+9425                        true, false, MY_PID, Process.SYSTEM_UID, UserHandle.USER_ALL);
+9426            } finally {
+9427                Binder.restoreCallingIdentity(ident);
+9428            }
+9429            mStackSupervisor.resumeTopActivitiesLocked();
+9430            sendUserSwitchBroadcastsLocked(-1, mCurrentUserId);
+9431        }
+9432    }
+9433
+
+
+</code></pre></li>
+
+<li><p>在AMS的SystemReady最后会执行。 Line 9429: mStackSupervisor.resumeTopActivitiesLocked(); 当前没有TopActivity，会启动launcher。</p></li>
 </ul>
 
 <h1 id="contact-us:fdd6ada81b0db5bbcc8e39e3a34b071f">Contact us</h1>
@@ -1049,7 +1109,7 @@ http://androidxref.com/4.4.4_r1/xref/frameworks/base/cmds/app_process/app_main.c
       </article>
 
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       
 <aside class="site">
 
@@ -1084,9 +1144,9 @@ http://androidxref.com/4.4.4_r1/xref/frameworks/base/cmds/app_process/app_main.c
     </div>
     <div class="list-group">
       
-      <a href="http://wei2009.github.io/tags/android" class="list-group-item">android</a>
-      
       <a href="http://wei2009.github.io/tags/%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B" class="list-group-item">启动流程</a>
+      
+      <a href="http://wei2009.github.io/tags/android" class="list-group-item">android</a>
       
     </div>
   </div>
