@@ -540,8 +540,9 @@ root      5     2     0      0     c00804ec 00000000 S kworker/0:0H
 
 <h4 id="zygoteinit:fdd6ada81b0db5bbcc8e39e3a34b071f">ZygoteInit</h4>
 
-<pre><code>```java
-http://androidxref.com/4.4.4_r1/xref/frameworks/base/core/java/com/android/internal/os/ZygoteInit.java
+<ul>
+<li><pre><code class="language-java">http://androidxref.com/4.4.4_r1/xref/frameworks/base/core/java/com/android/internal/os/ZygoteInit.java
+
 
 561
 562    public static void main(String argv[]) {
@@ -592,10 +593,9 @@ http://androidxref.com/4.4.4_r1/xref/frameworks/base/core/java/com/android/inter
 607    }
 608
 
-```
-</code></pre>
 
-<ul>
+</code></pre></li>
+
 <li><p>Line 567  这里会执行 registerZygoteSocket();</p>
 
 <pre><code class="language-java">http://androidxref.com/4.4.4_r1/xref/frameworks/base/core/java/com/android/internal/os/ZygoteInit.java
@@ -726,8 +726,9 @@ http://androidxref.com/4.4.4_r1/xref/frameworks/base/core/java/com/android/inter
 
 <h4 id="systemserver:fdd6ada81b0db5bbcc8e39e3a34b071f">SystemServer.</h4>
 
-<pre><code>```java
-http://androidxref.com/4.4.4_r1/xref/frameworks/base/core/java/com/android/internal/os/ZygoteInit.java
+<ul>
+<li><pre><code class="language-java">http://androidxref.com/4.4.4_r1/xref/frameworks/base/core/java/com/android/internal/os/ZygoteInit.java
+
 
 465    private static void handleSystemServerProcess(
 466            ZygoteConnection.Arguments parsedArgs)
@@ -755,10 +756,10 @@ http://androidxref.com/4.4.4_r1/xref/frameworks/base/core/java/com/android/inter
 488
 489        /* should never reach here */
 490    }
-```
+</code></pre>
 
-```java
-http://androidxref.com/4.4.4_r1/xref/frameworks/base/core/java/com/android/internal/os/RuntimeInit.java
+<pre><code class="language-java">http://androidxref.com/4.4.4_r1/xref/frameworks/base/core/java/com/android/internal/os/RuntimeInit.java
+
 
 261    public static final void zygoteInit(int targetSdkVersion, String[] argv)
 262            throws ZygoteInit.MethodAndArgsCaller {
@@ -771,10 +772,10 @@ http://androidxref.com/4.4.4_r1/xref/frameworks/base/core/java/com/android/inter
 269
 270        applicationInit(targetSdkVersion, argv);
 271    }
-```
+</code></pre>
 
-```cpp
-http://androidxref.com/4.4.4_r1/xref/frameworks/base/core/jni/AndroidRuntime.cpp#com_android_internal_os_RuntimeInit_nativeZygoteInit
+<pre><code class="language-cpp">http://androidxref.com/4.4.4_r1/xref/frameworks/base/core/jni/AndroidRuntime.cpp#com_android_internal_os_RuntimeInit_nativeZygoteInit
+
 
 198static void com_android_internal_os_RuntimeInit_nativeZygoteInit(JNIEnv* env, jobject clazz)
 199{
@@ -782,10 +783,11 @@ http://androidxref.com/4.4.4_r1/xref/frameworks/base/core/jni/AndroidRuntime.cpp
 201}
 202
 
-```
 
-```cpp
-http://androidxref.com/4.4.4_r1/xref/frameworks/base/cmds/app_process/app_main.cpp
+</code></pre>
+
+<pre><code class="language-cpp">http://androidxref.com/4.4.4_r1/xref/frameworks/base/cmds/app_process/app_main.cpp
+
 
 98    virtual void onZygoteInit()
 99    {
@@ -797,11 +799,9 @@ http://androidxref.com/4.4.4_r1/xref/frameworks/base/cmds/app_process/app_main.c
 105        proc-&gt;startThreadPool();
 106    }
 107
-```
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>这里又执行到了RuntimeInit.zygoteInit，其中nativeZygoteInit 最终会调用到 AppRuntime::onZygoteInit(), 这段代码，如果熟悉Binder的话，就很清楚，就是初始化Binder,这里就不多说了。</li>
+<li><p>这里又执行到了RuntimeInit.zygoteInit，其中nativeZygoteInit 最终会调用到 AppRuntime::onZygoteInit(), 这段代码，如果熟悉Binder的话，就很清楚，就是初始化Binder,这里就不多说了。</p></li>
 
 <li><p>下面再看applicationInit(targetSdkVersion, argv);</p>
 
@@ -1144,9 +1144,9 @@ http://androidxref.com/4.4.4_r1/xref/frameworks/base/cmds/app_process/app_main.c
     </div>
     <div class="list-group">
       
-      <a href="http://wei2009.github.io/tags/%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B" class="list-group-item">启动流程</a>
-      
       <a href="http://wei2009.github.io/tags/android" class="list-group-item">android</a>
+      
+      <a href="http://wei2009.github.io/tags/%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B" class="list-group-item">启动流程</a>
       
     </div>
   </div>
